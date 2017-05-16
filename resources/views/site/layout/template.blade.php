@@ -37,6 +37,17 @@
         {!! Html::script('/js/jquery.maskedinput.min.js') !!}
         {!! Html::script('/js/jquery.price_format.min.js') !!}
         {!! Html::script('/js/jsInit.min.js') !!}
+
+        <script>
+
+            window.scrollTo(0, 0);
+            $('a').click(function(){
+                $('html, body').animate({
+                    scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+                }, 500);
+                return false;
+            });
+        </script>
         
         @yield('post-script')
 </html>

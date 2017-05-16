@@ -24,11 +24,11 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ route('/') }}">Home</a></li>
-                <li><a href="{{-- route('/servicos') --}}">Serviços</a></li>
-                <li><a href="{{-- route('/portifolio') --}}">Portifólio</a></li>
-                <li><a href="{{-- route('/contato') --}}">Blog</a></li>
-                <li><a href="{{-- route('/contato') --}}">Contato</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#portifolio">Portifólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="{{-- route('/blog') --}}">Blog</a></li>
             </ul>
         </div>
     </div>

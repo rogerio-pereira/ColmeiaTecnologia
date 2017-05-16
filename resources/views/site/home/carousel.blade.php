@@ -1,4 +1,5 @@
 <div id="homeCarousel" class="carousel slide carouselHome" data-ride="carousel">
+    <a name='home'></a>
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>

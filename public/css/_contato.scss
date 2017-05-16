@@ -4,8 +4,15 @@
 {
     background-image: url('/img/template/background-contato.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
     padding-bottom: 40px;
+
+    /* Set a specific height */
+    min-height: 100px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
 }
 
 input, textarea

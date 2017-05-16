@@ -1,4 +1,5 @@
 <div class='container' data-scroll-reveal="enter left move 20px">
+    <a name='contato'></a>
     <h1 class='text-center'>
         Contato
     </h1>
