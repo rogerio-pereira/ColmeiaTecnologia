@@ -14,5 +14,9 @@ class ContatoController extends Controller
         $data = $request->all();
 
         Mail::to('contato@colmeiatecnologia.com.br')->send(new Contato($data));
+
+        $request->session()->flash('mensagem', 'Enviado com sucesso!');
+
+        return redirect()->back();
     }
 }

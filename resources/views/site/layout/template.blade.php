@@ -14,6 +14,12 @@
     {!! Html::style('/css/style.min.css') !!}
 </head>
     <body>
+        @if (Session::has('mensagem'))
+            <div class='alert alert-success col-md-4 col-md-offset-4 text-center' role="alert">
+                {{Session::get('mensagem')}}
+            </div>
+        @endif
+
         <header>
             @include('site.layout.menu')
         </header>
@@ -39,7 +45,6 @@
         {!! Html::script('/js/jsInit.min.js') !!}
 
         <script>
-
             window.scrollTo(0, 0);
             $('a').click(function(){
                 $('html, body').animate({

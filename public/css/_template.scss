@@ -50,6 +50,14 @@ a[name] {
     font-weight: bolder;
 }
 
+.alert
+{
+    position: absolute;
+    top: 0;
+    z-index: 5000;
+    clear: both; 
+}
+
 .navbar
 {
     height: 120px;
