@@ -6,11 +6,11 @@
 
     <div class='row'>
         <div class='col-md-4 text-center portifolio-item'>
-            <img src='{{ asset('img/hotel-estancia.png') }}' alt='' title='' class='img-responsive'>
+            <img src='{{ asset('img/hotel-estancia.jpg') }}' alt='' title='' class='img-responsive'>
         </div>
         
         <div class='col-md-4 text-center portifolio-item'>
-            <img src='{{ asset('img/soares-e-ornellas.png') }}' alt='' title='' class='img-responsive'>
+            <img src='{{ asset('img/soares-e-ornellas.jpg') }}' alt='' title='' class='img-responsive'>
         </div>
     </div>
 </div>
