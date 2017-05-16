@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::get('/', 'Site\HomeController@index')->name('/');
 Route::get('/home', 'Site\HomeController@index')->name('home');
+Route::post('/contato/send', 'Site\\ContatoController@send')->name('contato.send');

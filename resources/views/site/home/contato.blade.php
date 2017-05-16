@@ -52,7 +52,7 @@
 
         <div class='col-md-6'>
             <div class='row'>
-                {!! Form::open([/*'route' => 'contato.send',*/ 'class' => 'form']) !!}
+                {!! Form::open(['route' => 'contato.send',  'class' => 'form']) !!}
                     {{--Nome--}}
                     {!! Form::input('text', 'name', null, ['placeholder' => 'Nome', 'class' => 'form-control', 'autofocus', 'required']) !!}
 
