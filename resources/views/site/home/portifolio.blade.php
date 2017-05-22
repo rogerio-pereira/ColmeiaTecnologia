@@ -6,11 +6,25 @@
 
     <div class='row'>
         <div class='col-md-4 text-center portifolio-item'>
-            <img src='{{ asset('img/hotel-estancia.jpg') }}' alt='' title='' class='img-responsive'>
+            <a href='http://www.eph.com.br' target="_blank"  alt='Hotel Estancia' title='Hotel Estancia'>
+                <figure class='portifolio'>
+                    <img src='{{ asset('img/hotel-estancia.jpg') }}' alt='Hotel Estancia' title='Hotel Estancia' class='img-responsive'>
+                    <figcaption>
+                        Hotel Estância
+                    </figcaption>
+                </figure>
+            </a>
         </div>
         
         <div class='col-md-4 text-center portifolio-item'>
-            <img src='{{ asset('img/soares-e-ornellas.jpg') }}' alt='' title='' class='img-responsive'>
+            <a href='http://www.soareseornellas.com.br' target="_blank"  alt='Hotel Estancia' title='Hotel Estancia'>
+                <figure class='portifolio'>
+                        <img src='{{ asset('img/soares-e-ornellas.jpg') }}' alt='Soares & Ornellas' title='Soares & Ornellas' class='img-responsive'>
+                    <figcaption>
+                        Soares & Ornellas
+                    </figcaption>
+                </figure>
+            </a>
         </div>
     </div>
 </div>

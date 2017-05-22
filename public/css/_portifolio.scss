@@ -19,3 +19,33 @@
 {
     margin-bottom: 20px;
 }
+
+figure.portifolio
+{
+    position: relative;
+    color: white;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+figure.portifolio figcaption
+{
+    opacity: 0;
+    background-color: rgba(250,165,26,.8);
+    position: absolute;
+    bottom: 0px;
+    padding: 20px;
+    width: 100%;
+
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+figure.portifolio:hover figcaption
+{
+    opacity:1;
+}

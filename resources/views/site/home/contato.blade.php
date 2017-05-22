@@ -32,13 +32,13 @@
                 <a href='#' alt='' title=''>
                     <i class="fa fa-instagram fa-4x" aria-hidden="true"></i>
                 </a>
-                --}}
 
                 <a href='#' alt='Skype' title='Skype'>
                     <i class="fa fa-skype fa-4x" aria-hidden="true"></i>
                 </a>
+                --}}
 
-                <a href='#' alt='WhatsApp' title='WhatsApp'>
+                <a href='intent://send/+5535991090906Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end' alt='WhatsApp +55 35 99109-0906' title='WhatsApp +55 35 99109-0906'>
                     <i class="fa fa-whatsapp fa-4x" aria-hidden="true"></i>
                 </a>
 
