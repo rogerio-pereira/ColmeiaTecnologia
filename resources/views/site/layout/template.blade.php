@@ -14,6 +14,7 @@
     {!! Html::style('/css/style.min.css') !!}
 </head>
     <body>
+        @include('site.layout.analytics')
         @if (Session::has('mensagem'))
             <div class='alert alert-success col-md-4 col-md-offset-4 text-center' role="alert">
                 {{Session::get('mensagem')}}

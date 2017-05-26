@@ -11,12 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group([
+                'domain' => 'blog.'.str_replace('http://','',env('APP_URL')),
+                'namespace' => 'Blog'
+            ], function() 
+{
+    Route::get('/', 'BlogController@index')->name('blog');
+    Route::post('/newsletter/create', 'Newsletter@create')->name('newsletter.create');
+});
+
+Route::group([
+                'domain' => str_replace('http://','',env('APP_URL')),
+                'namespace' => 'Site'
+            ], function() 
+{
+    Route::get('/', 'HomeController@index')->name('index');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::post('/contato/send', 'ContatoController@send')->name('contato.send');
 });
 
 Auth::routes();
-
-Route::get('/', 'Site\HomeController@index')->name('/');
-Route::get('/home', 'Site\HomeController@index')->name('home');
-Route::post('/contato/send', 'Site\\ContatoController@send')->name('contato.send');

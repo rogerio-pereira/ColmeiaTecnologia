@@ -18,7 +18,7 @@
             </div>
 
             <div class='col-md-12 social-media text-center'>
-                <a href='#' alt='Facebook' title='Facebook'>
+                <a href='https://www.facebook.com/colmeiatecnologia/' alt='Facebook' title='Facebook' target='_blank'>
                     <i class="fa fa-facebook-square fa-4x" aria-hidden="true"></i>
                 </a>
 
@@ -38,7 +38,11 @@
                 </a>
                 --}}
 
-                <a href='intent://send/+5535991090906Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end' alt='WhatsApp +55 35 99109-0906' title='WhatsApp +55 35 99109-0906'>
+                <a href='tel:3537134137' alt='Telefone +55 35 3713 4137' title='Telefone +55 35 3713 4137'>
+                    <i class="fa fa-phone fa-4x" aria-hidden="true"></i>
+                </a>
+
+                <a href='tel:35991090906' alt='WhatsApp +55 35 99109-0906' title='WhatsApp +55 35 99109-0906'>
                     <i class="fa fa-whatsapp fa-4x" aria-hidden="true"></i>
                 </a>
 

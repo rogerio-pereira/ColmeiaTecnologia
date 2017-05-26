@@ -1,0 +1,36 @@
+aside
+{
+    font-size: .8em;
+}
+
+aside h1
+{
+    font-size: 1.4em;
+    font-weight:bolder;
+}
+
+aside ul
+{
+    list-style-type: none;
+}
+
+aside ul li, aside a
+{
+    color: #e58d00;
+}
+
+aside a
+{
+    text-decoration: none;
+}
+
+aside a:hover, aside ul li:hover
+{
+    color: #FAA51A;
+    text-decoration: underline;
+}
+
+aside ul li:before
+{
+    content: ">";
+}
