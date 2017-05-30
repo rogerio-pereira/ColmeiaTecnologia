@@ -180,6 +180,9 @@ return [
         //HTML
         Collective\Html\HtmlServiceProvider::class,
 
+        //Logs
+        Spatie\Activitylog\ActivitylogServiceProvider::class,
+
     ],
 
     /*
