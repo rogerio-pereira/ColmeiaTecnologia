@@ -21,7 +21,7 @@ Auth::routes();
 Route::group([
                 'domain' => 'painel.'.str_replace('http://','',env('APP_URL')),
                 'namespace' => 'Painel',
-                //'middleware' => 'auth'
+                'middleware' => 'auth'
             ], function() 
 {
     Route::get('/', 'PainelController@index');
