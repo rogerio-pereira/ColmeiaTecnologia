@@ -1,8 +1,5 @@
 //Bootstrap
-@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
-
-//Fonte
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import 'bootstrap.min.css';
 
 //Icons
 @import 'font-awesome.min.css';
@@ -12,3 +9,4 @@
 @import 'servicos';
 @import 'portifolio';
 @import 'contato';
+@import 'responsividade';

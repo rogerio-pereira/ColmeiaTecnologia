@@ -28,7 +28,7 @@
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#portifolio">Portifólio</a></li>
                 <li><a href="#contato">Contato</a></li>
-                <li><a href="{{route('blog')}}">Blog</a></li>
+                {{--<li><a href="{{route('blog')}}">Blog</a></li>--}}
             </ul>
         </div>
     </div>

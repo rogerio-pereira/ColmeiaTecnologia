@@ -1,4 +1,5 @@
 <div class="modal-header">
+    <h1>Upload</h1>
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
         <i class="fa fa-times-circle" aria-hidden="true"></i>
     </button>
@@ -9,6 +10,13 @@
         <div class='col-md-12 text-center'>
             <h1>Imagens</h1>
         </div>
+    
+        <div class='col-md-12'>
+            {!! Form::open(['route' => 'upload.upload']) !!}
+                @include('painel.upload._form')
+            {!! Form::close() !!}
+        </div>
+
 
         {!! Form::input('hidden', 'image', null, ['id' => 'selectedImage']) !!}
 

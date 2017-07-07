@@ -10,7 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*
+ * AUTH
+ */
 Auth::routes();
+
+/*
+ * PAINEL
+ */
 Route::group([
                 'domain' => 'painel.'.str_replace('http://','',env('APP_URL')),
                 'namespace' => 'Painel',
@@ -23,6 +30,9 @@ Route::group([
     Route::get('/upload', 'UploadController@index');
 });
 
+/*
+ * BLOG
+ */
 Route::group([
                 'domain' => 'blog.'.str_replace('http://','',env('APP_URL')),
                 'namespace' => 'Blog'
@@ -32,6 +42,9 @@ Route::group([
     //Route::post('/newsletter/create', 'Newsletter@create')->name('newsletter.create');
 });
 
+/*
+ * SITE
+ */
 Route::group([
                 'domain' => str_replace('http://','',env('APP_URL')),
                 'namespace' => 'Site'
