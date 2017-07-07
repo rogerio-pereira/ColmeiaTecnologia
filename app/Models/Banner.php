@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class Banner extends Model
+class Banner extends Model implements Transformable
 {
+    use TransformableTrait;
     use SoftDeletes;
     use LogsActivity;
 
@@ -35,5 +37,5 @@ class Banner extends Model
      *
      * @var array
      */
-    protected $dates = ['deleted_at'];
+    protected $dates = ['created_at', 'deleted_at'];
 }

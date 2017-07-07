@@ -12,6 +12,7 @@
 
         {{--Styles--}}
         <link href="{{ asset('css/painel/style.min.css') }}" rel="stylesheet">
+        @yield('css')
 
         {{--JS Libs--}}
         {!! Html::script('/js/jquery.min.js') !!}

@@ -2,11 +2,11 @@
 
 @section('content')
     <div class='col-md-12 text-center'>
-        <h1>Banners</h1>
+        <h1>Categorias de Posts</h1>
     </div>
 
     <div class='col-md-12 text-center'>
-        <a href='{{url('/banners/create')}}' alt='Cadastrar' title='Cadastrar' class='btn btn-default'>
+        <a href='{{url('/categorias_post/create')}}' alt='Cadastrar' title='Cadastrar' class='btn btn-default'>
             Cadastrar
         </a>
         <br/>
@@ -19,34 +19,34 @@
                 <th width="100px">Ações</th>
                 <th width="100px">ID</th>
                 <th>Titulo</th>
-                <th width="250px">Imagem</th>
-                <th width="100px">Ativo</th>
             </tr>
         </thead>
         <tbody>
-            @forelse ($banners as $banner)
+            @forelse ($postCategories as $postCategory)
             <tr>
                 <td>
-                    {!! Form::open(['route' => ['banners.destroy', $banner->id], 'method' => 'delete', 'style' => 'display: inline']) !!}
+                    {!! Form::open(['route' => ['categorias_post.destroy', $postCategory->id], 'method' => 'delete', 'style' => 'display: inline']) !!}
                     {!! Form::button('<i class="fa fa-trash" aria-hidden="true"></i>', ['type' => 'submit', 'class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}
 
-                    <a href='banners/{{$banner->id}}/edit' class='btn btn-info'>
+                    <a href='categorias_post/{{$postCategory->id}}/edit' class='btn btn-info'>
                         <i class="fa fa-pencil" aria-hidden="true"></i>
                     </a>
                 </td>
-                <td>{{$banner->id}}</td>
-                <td>{{$banner->title}}</td>
-                <td>{{$banner->image}}</td>
-                <td></td>
+                <td>{{$postCategory->id}}</td>
+                <td>{{$postCategory->title}}</td>
             </tr>
             @empty
             <tr>
-                <td colspan='5' class='text-center'>
-                    Nenhum Banner cadastrado
+                <td colspan='3' class='text-center'>
+                    Nenhuma Categoria de Post cadastrada
                 </td>
             </tr>
             @endforelse
         </tbody>
     </table>
+
+    <div class='col-md-12 text-center'>
+        {{$postCategories->render()}}
+    </div>
 @endsection

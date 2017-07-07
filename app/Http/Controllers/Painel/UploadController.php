@@ -14,4 +14,20 @@ class UploadController extends Controller
 
         return view('painel.upload.index', compact('files'));
     }
+
+
+    public function upload(Request $request)
+    {
+        $data = $request->all();
+
+        $filesUp = $data['file'];
+
+        foreach($filesUp as $file) {
+            $name = $file->getClientOriginalName();
+
+            Storage::putFileAs('/img', $file, $name);
+        }
+        
+        return redirect()->back();
+    }
 }

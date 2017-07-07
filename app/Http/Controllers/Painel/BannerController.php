@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\Painel;
 
 use App\Http\Controllers\Controller;
-use App\Models\Banner;
+use App\Repositories\BannerRepository;
 use Illuminate\Http\Request;
 
 class BannerController extends Controller
 {
-    private $banners;
+    private $repository;
 
-    public function __construct(Banner $banners)
+    public function __construct(BannerRepository $repository)
     {
-        $this->banners = $banners;
+        $this->repository = $repository;
     }
 
 
@@ -23,7 +23,7 @@ class BannerController extends Controller
      */
     public function index()
     {
-        $banners = $this->banners->all();
+        $banners = $this->repository->paginate();
 
         return view('painel.banners.index', compact('banners'));
     }

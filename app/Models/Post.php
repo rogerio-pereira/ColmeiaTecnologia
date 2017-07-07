@@ -2,37 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\PostCategory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
-
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class User extends Authenticatable implements Transformable
+class Post extends Model implements Transformable
 {
     use TransformableTrait;
-    use Notifiable;
     use SoftDeletes;
     use LogsActivity;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
-        'name', 'email', 'password',
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
+        'title', 'text', 'image', 'active', 'post_category_id'
     ];
     
     /*
@@ -41,9 +25,7 @@ class User extends Authenticatable implements Transformable
      * @var array
      */
     protected static $logAttributes = [
-        'name', 
-        'email', 
-        'crm'
+        'id', 'title', 'text', 'image', 'active', 'post_category_id'
     ];
 
     /**
@@ -52,4 +34,10 @@ class User extends Authenticatable implements Transformable
      * @var array
      */
     protected $dates = ['created_at', 'deleted_at'];
+
+    public function category()
+    {
+        return $this->belongsTo(PostCategory::class);
+    }
+
 }
