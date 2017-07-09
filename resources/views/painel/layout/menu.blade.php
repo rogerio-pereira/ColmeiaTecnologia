@@ -7,6 +7,9 @@
     </li>
 
     {{--Posts--}}
+    <li class='menuLabel'>
+        Blog
+    </li>
     <li>
         <a href='{{url('/categorias_post')}}' alt='Categorias Post' title='Categorias Post'>
             <i class="fa fa-list" aria-hidden="true"></i> Categorias Post

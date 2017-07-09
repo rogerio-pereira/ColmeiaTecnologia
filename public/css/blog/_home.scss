@@ -4,6 +4,7 @@ div.content
 {
     background-color:white;
     margin-top:120px;
+    margin-bottom:120px;
     font-size:1.5em;
     min-height: 510px;
 }
@@ -26,4 +27,17 @@ hr.white
     background-image:   -moz-linear-gradient(left,      rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
     background-image:   -ms-linear-gradient(left,       rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
     background-image:   -o-linear-gradient(left,        rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
+}
+
+.listPosts h1
+{
+    font-size: 1em;
+    font-weight: bolder;
+}
+
+footer
+{
+    position: relative;
+    bottom: 0px;
+    margin-top: 200px;
 }

@@ -30,7 +30,20 @@ aside a:hover, aside ul li:hover
     text-decoration: underline;
 }
 
-aside ul li:before
+aside div.alert-success,
+aside div.alert-success ul,
+aside div.alert-success ul li
 {
-    content: ">";
+    background-color: #dff0d8 !important;
+    border-color: #d6e9c6 !important;
+    color: #3c763d !important;
+}
+
+aside div.alert-danger,
+aside div.alert-danger ul,
+aside div.alert-danger ul li
+{
+    background-color: #f2dede !important;
+    border-color: #ebccd1 !important;
+    color: #a94442 !important;
 }

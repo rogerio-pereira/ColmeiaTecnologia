@@ -31,27 +31,76 @@ hr.white
     background-image:   -o-linear-gradient(left,        rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
 }
 
+.margin-bottom 
+{
+    margin-bottom: 20px;
+}
+
+.margin-bottom-p
+{
+    margin-bottom: 10px;
+}
+
+.margin-bottom-g
+{
+    margin-bottom: 40px;
+}
+
+.margin-top 
+{
+    margin-top: 20px;
+}
+
 .margin-top-p
 {
     margin-top: 10px;
 }
 
-.margin-top
+.margin-top-g
 {
-    margin-top: 20px;
+    margin-top: 40px;
+}
+
+.padding-bottom 
+{
+    padding-bottom: 20px;
+}
+
+.padding-bottom-p
+{
+    padding-bottom: 10px;
+}
+
+.padding-bottom-g
+{
+    padding-bottom: 40px;
+}
+
+.padding-top 
+{
+    padding-top: 20px;
+}
+
+.padding-top-p
+{
+    padding-top: 10px;
+}
+
+.padding-top-g
+{
+    padding-top: 40px;
 }
 
 section
 {
     position: relative;
-    min-width: 100%;
     margin-top: -20px;
     min-height: 585px;
 }
 
 aside.menuContainer
 {
-    position: absolute;
+    position: relative;
     height: 100%;
     width: 100%;
     background-color: #222222;
@@ -80,6 +129,16 @@ nav.menuPrincipal ul li
     display: block;
 }
 
+nav.menuPrincipal ul li.menuLabel
+{
+    background-color: #9d9d9d;
+    color: #222222;
+    text-align: center;
+    border-top: solid 1px #222222;
+    border-bottom: solid 1px #222222;
+    text-transform: uppercase;
+}
+
 nav.menuPrincipal ul li a
 {
     color: #636b6f;
@@ -105,6 +164,8 @@ nav.menuPrincipal ul li a:hover
 
 
 footer {
+    position:relative;
+    bottom:0px;
     background-color: #222222;
     color: #636b6f;
     padding: 10px;

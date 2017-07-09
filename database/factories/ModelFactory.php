@@ -22,3 +22,19 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Models\PostCategory::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->word
+    ];
+});
+
+$factory->define(App\Models\Post::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->word,
+        'description' => $faker->text(160),
+        'text' => $faker->text,
+        'image' => 'http://painel.colmeiatecnologia/img/hotel-estancia.jpg',
+        'active' => true
+    ];
+});

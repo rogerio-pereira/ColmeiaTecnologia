@@ -19,6 +19,7 @@
                 <th width="100px">Ações</th>
                 <th width="100px">ID</th>
                 <th>Titulo</th>
+                <th>Descrição</th>
                 <th width="150px">Imagem</th>
             </tr>
         </thead>
@@ -36,13 +37,14 @@
                 </td>
                 <td>{{$post->id}}</td>
                 <td>{{$post->title}}</td>
+                <td>{{$post->description}}</td>
                 <td>
                     <img src='{{$post->image}}' alt='{{$post->title}}' title='{{$post->title}}' class='img-responsive'>
                 </td>
             </tr>
             @empty
             <tr>
-                <td colspan='3' class='text-center'>
+                <td colspan='5' class='text-center'>
                     Nenhuma Post cadastrado
                 </td>
             </tr>

@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>Blog - {{ config('app.name') }}</title>
+        @include('site.layout.meta')
 
         <!-- Styles -->
         {!! Html::style('/css/blog/style.min.css') !!}
@@ -32,18 +25,26 @@
                             <div class='newsletter text-center'>
                                 <h1>Newsletter</h1>
 
-                                {!! Form::open(['route' => 'newsletter.create',  'class' => 'form']) !!}
-                                    {!! Form::input('email', 'email', null, ['placeholder' => 'Receba nossas novidades!', 'class' => 'form-control', 'required']) !!}
+                                {!! Form::open(['route' => 'subscription.create',  'class' => 'form']) !!}
+                                    <div class='form-group'>
+                                        {!! Form::input('email', 'email', null, ['placeholder' => 'Receba nossas novidades!', 'class' => 'form-control', 'required']) !!}
+                                    </div>
                                     
                                     {!! Form::submit('Receber', ['class' => 'btn btn-primary']) !!}
                                 {!! Form::close() !!}
+                            </div>
+    
+                            <div class='alertMessage'>
+                                @include('layouts.errors')
                             </div>
 
                             <div class='busca text-center'>
                                 <h1>Busca</h1>
 
-                                {!! Form::open(['route' => 'newsletter.create',  'class' => 'form']) !!}
-                                    {!! Form::input('text', 'busca', null, ['placeholder' => 'O que está buscando?', 'class' => 'form-control', 'required']) !!}
+                                {!! Form::open(['route' => 'busca',  'class' => 'form']) !!}
+                                    <div class='form-group'>
+                                        {!! Form::input('text', 'busca', null, ['placeholder' => 'O que está buscando?', 'class' => 'form-control', 'required']) !!}
+                                    </div>
                                     
                                     {!! Form::submit('Buscar', ['class' => 'btn btn-primary']) !!}
                                 {!! Form::close() !!}
@@ -53,26 +54,21 @@
                                 <h1 class='text-center'>Categorias</h1>
 
                                 <ul>
-                                    <li>
-                                        <a href='/categoria/_categoria_' alt='_categoria_' title='_categoria_'>
-                                            _categoria_
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href='/categoria/_categoria_' alt='_categoria_' title='_categoria_'>
-                                            _categoria_
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href='/categoria/_categoria_' alt='_categoria_' title='_categoria_'>
-                                            _categoria_
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href='/categoria/_categoria_' alt='_categoria_' title='_categoria_'>
-                                            _categoria_
-                                        </a>
-                                    </li>   
+                                    @foreach ($categoriesList as $category)
+                                        @php
+                                            $categoryName = App\Http\Controllers\Util\UrlController::friendlyUrl($category->title);
+                                        @endphp
+
+                                        <li>
+                                            <a 
+                                                href='/{{$categoryName}}' 
+                                                alt='{{$categoryName}}' 
+                                                title='{{$categoryName}}'
+                                            >
+                                                {{$category->title}}
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </aside>
@@ -90,12 +86,7 @@
     </body>
 
     <script>
-        window.scrollTo(0, 0);
-        $('.site').click(function(){
-            $('html, body').animate({
-                scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
-            }, 500);
-            return false;
-        });
+        {!! Html::script('/js/jquery.min.js') !!}
+        {!! Html::script('/js/bootstrap.min.js') !!}
     </script>
 </html>

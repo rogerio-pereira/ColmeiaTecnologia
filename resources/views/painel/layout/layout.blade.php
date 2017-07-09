@@ -77,12 +77,14 @@
                 </aside>
             </div>
             
-            <div class='col-md-10'>
+            <div class='col-md-10 padding-bottom'>
                 <div class='row'>
                     @yield('content')
                 </div>
             </div>
         </section>
+
+        <div class='clearfix'></div>
 
         <footer class='text-center'>
             &copy; 2017 - 

@@ -2,21 +2,19 @@
 
 namespace App\Models;
 
-use App\Models\PostCategory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class Post extends Model implements Transformable
+class Subscription extends Model implements Transformable
 {
     use TransformableTrait;
-    use SoftDeletes;
     use LogsActivity;
 
     protected $fillable = [
-        'title', 'description', 'text', 'image', 'active', 'post_category_id'
+        'email', 'token'
     ];
     
     /*
@@ -25,7 +23,7 @@ class Post extends Model implements Transformable
      * @var array
      */
     protected static $logAttributes = [
-        'id', 'title', 'description', 'text', 'image', 'active', 'post_category_id'
+        'id',  'email', 'token'
     ];
 
     /**
@@ -33,11 +31,6 @@ class Post extends Model implements Transformable
      *
      * @var array
      */
-    protected $dates = ['created_at', 'deleted_at'];
-
-    public function category()
-    {
-        return $this->hasOne(PostCategory::class, 'id', 'post_category_id');
-    }
+    protected $dates = ['created_at'];
 
 }

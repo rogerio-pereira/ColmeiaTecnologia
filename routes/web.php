@@ -42,7 +42,12 @@ Route::group([
             ], function() 
 {
     Route::get('/', 'BlogController@index')->name('blog');
-    //Route::post('/newsletter/create', 'Newsletter@create')->name('newsletter.create');
+    Route::get('{category}', 'BlogController@category')->name('category');
+    Route::get('{category}/{title}', 'BlogController@post')->name('post');
+    Route::post('busca', 'BlogController@search')->name('busca');
+    
+    Route::post('/subscription/create', 'SubscriptionController@create')->name('subscription.create');
+    Route::get('/subscription/destroy/{id}', 'SubscriptionController@destroy')->name('subscription.destroy');
 });
 
 /*

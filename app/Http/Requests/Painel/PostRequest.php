@@ -25,6 +25,7 @@ class PostRequest extends FormRequest
     {
         return [
             'title' => 'required|max:100',
+            'description' => 'required|max:160',
             'text' => 'required',
             'image' => 'required',
         ];
@@ -40,6 +41,9 @@ class PostRequest extends FormRequest
         return [
             'title.required' => 'O campo "Título" é obrigatório',
             'title.max' => 'O campo "Título" não deve ser maior do que :max caracteres',
+
+            'description.required' => 'O campo "Descrição" é obrigatório',
+            'description.max' => 'O campo "Descrição" não deve ser maior do que :max caracteres',
 
             'text.required' => 'O campo "Texto" é obrigatório',
 

@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        @include('site.layout.meta')
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    {!! Html::style('/css/style.min.css') !!}
-</head>
+        <!-- Styles -->
+        {!! Html::style('/css/style.min.css') !!}
+    </head>
     <body>
         @include('site.layout.analytics')
         @if (Session::has('mensagem'))
