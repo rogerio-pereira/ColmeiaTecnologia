@@ -2,48 +2,61 @@
     <a name='home'></a>
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#homeCarousel" data-slide-to="1"></li>
-        <li data-target="#homeCarousel" data-slide-to="2"></li>
+        @php
+            $activeIndicator = 'active';
+        @endphp
+
+        @for ($i=0; $i<count($banners); $i++) 
+            @if($i==1)
+                @php
+                    $activeIndicator = '';
+                @endphp
+            @endif
+
+            <li 
+                data-target="#homeCarousel" 
+                data-slide-to="{{$i}}" 
+                class='{{$activeIndicator}}'
+            ></li>
+        @endfor
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="{{ asset('img/assistencia-tecnica.jpg') }}" alt='Assistencia Técnica Especializada' title='Assistencia Técnica Especializada'>
-            <div class="carousel-caption">
-                <div>
-                    <h1>
-                        Assistencia Técnica Especializada
-                    </h1><br/>
-                    <a href='#' class='btn btn-primary'>Entre em contato</a>
-                </div>
-            </div>
-        </div>
+        @php
+            $item = 0;
+            $active = 'active';
+        @endphp
 
-        <div class="item">
-            <img src="{{ asset('img/desenvolvimento-sites.jpg') }}" alt='Desenvolviemento de Sites' title='Desenvolviemento de Sites'>
-            <div class="carousel-caption">
-                <div>
-                    <h1>
-                        Desenvolvimento de sites
-                    </h1><br/>
-                    <a href='#' class='btn btn-primary'>Faça um orçamento</a>
-                </div>
-            </div>
-        </div>
+        @foreach ($banners as $banner)
+            @if($item == 1)
+                @php
+                    $active = '';
+                @endphp
+            @endif
 
-        <div class="item">
-            <img src="{{ asset('img/desenvolvimento-sistemas.jpg') }}" alt='Desenvolvimento de sistemas' title='Desenvolvimento de sistemas'>
-            <div class="carousel-caption">
-                <div>
-                    <h1>
-                        Desenvolvimento de sistemas
-                    </h1><br/>
-                    <a href='#' class='btn btn-primary'>O que você precisa?</a>
+            <div class="item {{$active}}">
+                <img 
+                    src='{{ $banner->image }}' 
+                    alt='{{ $banner->title }}' 
+                    title='{{ $banner->title }}'
+                    class='img-responsive'
+                >
+                <div class="carousel-caption">
+                    <div>
+                        <h1>
+                            {{ $banner->title }}
+                        </h1><br/>
+                        
+                        {!! $banner->description !!}
+                    </div>
                 </div>
             </div>
-        </div>
+
+            @php
+                $item++;
+            @endphp
+        @endforeach
     </div>
 
     <!-- Controls -->

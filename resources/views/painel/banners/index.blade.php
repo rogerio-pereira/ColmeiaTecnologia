@@ -19,7 +19,7 @@
                 <th width="100px">Ações</th>
                 <th width="100px">ID</th>
                 <th>Titulo</th>
-                <th width="250px">Imagem</th>
+                <th width="150px">Imagem</th>
                 <th width="100px">Ativo</th>
             </tr>
         </thead>
@@ -37,7 +37,9 @@
                 </td>
                 <td>{{$banner->id}}</td>
                 <td>{{$banner->title}}</td>
-                <td>{{$banner->image}}</td>
+                <td>
+                    <img src='{{$banner->image}}' class='img-responsive'>
+                </td>
                 <td></td>
             </tr>
             @empty

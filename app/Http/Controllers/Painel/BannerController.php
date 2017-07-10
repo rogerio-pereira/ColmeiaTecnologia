@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Painel;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Painel\BannerRequest;
 use App\Repositories\BannerRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Spatie\Activitylog\Models\Activity;
 
 class BannerController extends Controller
 {
@@ -44,9 +47,20 @@ class BannerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BannerRequest $request)
     {
-        //
+        $data = $request->all();
+        $data['image'] = str_replace("://painel.", '://', $data['image']);
+
+        $this->repository->create($data);
+
+        //Grava Log
+        Activity::all()->last();
+
+        Session::flash('message', ['Post salvo com sucesso!']); 
+        Session::flash('alert-type', 'alert-success'); 
+
+        return redirect('/');
     }
 
     /**
@@ -68,7 +82,9 @@ class BannerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $banner = $this->repository->find($id);
+
+        return view('painel.banners.edit', compact('banner'));
     }
 
     /**
@@ -91,6 +107,11 @@ class BannerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->repository->delete($id);
+
+        //Grava Log
+        Activity::all()->last();
+
+        return redirect()->route('banners.index');
     }
 }

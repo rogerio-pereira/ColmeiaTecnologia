@@ -39,7 +39,7 @@
                 <td>{{$post->title}}</td>
                 <td>{{$post->description}}</td>
                 <td>
-                    <img src='{{$post->image}}' alt='{{$post->title}}' title='{{$post->title}}' class='img-responsive'>
+                    <img src='{{$post->image}}' class='img-responsive'>
                 </td>
             </tr>
             @empty

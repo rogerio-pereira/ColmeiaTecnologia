@@ -34,7 +34,14 @@ $factory->define(App\Models\Post::class, function (Faker\Generator $faker) {
         'title' => $faker->word,
         'description' => $faker->text(160),
         'text' => $faker->text,
-        'image' => 'https://colmeiatecnologia/img/hotel-estancia.jpg',
+        'image' => 'https://colmeiatecnologia/img/template/painel/sem-imagem.jpg',
         'active' => true
+    ];
+});
+
+$factory->define(App\Models\Banner::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->word,
+        'image' => 'https://colmeiatecnologia/img/template/painel/sem-imagem.jpg',
     ];
 });

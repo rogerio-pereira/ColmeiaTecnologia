@@ -10,7 +10,14 @@
             >
             {!! Form::input('hidden', 'image', null, ['id' => 'image']) !!}
         @else
-
+            <img 
+                src='{{$banner->image}}' 
+                alt='Clique para selecionar a imagem' 
+                title='Clique para selecionar a imagem' 
+                class='img-responsive'
+                id='image-uploaded'
+            >
+            {!! Form::input('hidden', 'image', null, ['id' => 'image']) !!}
         @endif
     </a>
 
