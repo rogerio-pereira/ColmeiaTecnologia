@@ -69,19 +69,25 @@
         </header>
 
         <section>
-            <div class='col-md-2'>
-                <aside class='menuContainer'>
-                    <nav class='menuPrincipal'>
-                        @include('painel.layout.menu')
-                    </nav>
-                </aside>
-            </div>
-            
-            <div class='col-md-10 padding-bottom'>
-                <div class='row'>
+            @if (!Auth::guest())
+                <div class='col-md-2'>
+                    <aside class='menuContainer'>
+                        <nav class='menuPrincipal'>
+                            @include('painel.layout.menu')
+                        </nav>
+                    </aside>
+                </div>
+                
+                <div class='col-md-10 padding-bottom'>
+                    <div class='row'>
+                        @yield('content')
+                    </div>
+                </div>
+            @else
+                <div class='col-md-12'>
                     @yield('content')
                 </div>
-            </div>
+            @endif
         </section>
 
         <div class='clearfix'></div>
