@@ -3,7 +3,7 @@
 @section('content')
     <div class='col-md-12 text-center'>
         <h1>
-            Alterar Banner: {{$banner->title}}  - ID: {{$banner->id}}
+            Alterar Serviço: {{$service->title}}  - ID: {{$service->id}}
         </h1>
     </div>
 
@@ -11,7 +11,7 @@
         @include('painel.layout.errors')
     </div>
 
-    {!! Form::model($banner, ['route' => ['banners.update', $banner->id], 'method' => 'put']) !!}
-        @include('painel.banners._form')
+    {!! Form::model($service, ['route' => ['servicos.update', $service->id], 'method' => 'put']) !!}
+        @include('painel.services._form')
     {!! Form::close() !!}
 @endsection

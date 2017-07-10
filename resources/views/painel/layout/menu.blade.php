@@ -5,6 +5,11 @@
             <i class="fa fa-picture-o" aria-hidden="true"></i> Banners
         </a>
     </li>
+    <li>
+        <a href='{{url('/servicos')}}' alt='Serviços' title='Serviços'>
+            <i class="fa fa-wrench" aria-hidden="true"></i> Serviços
+        </a>
+    </li>
 
     {{--Posts--}}
     <li class='menuLabel'>

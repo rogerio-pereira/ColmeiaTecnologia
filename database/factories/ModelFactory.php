@@ -45,3 +45,10 @@ $factory->define(App\Models\Banner::class, function (Faker\Generator $faker) {
         'image' => 'https://colmeiatecnologia/img/template/painel/sem-imagem.jpg',
     ];
 });
+
+$factory->define(App\Models\Service::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->sentence($nbWords = 3, $variableNbWords = true),
+        'icon' => '<i class="fa fa-rebel" aria-hidden="true"></i>',
+    ];
+});

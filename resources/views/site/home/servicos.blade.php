@@ -5,41 +5,11 @@
     </h1>
 
     <div class='row'>
-        <div class='col-md-4 col-sm-6 text-center containerServices' data-scroll-reveal="enter left move 20px">
-            <i class="fa fa-desktop fa-4x"></i>
-            <h3>Assistencia Técnica Especializada</h3>
-        </div>
-        
-        <div class='col-md-4 col-sm-6 text-center containerServices' data-scroll-reveal="enter left move 20px">
-            <i class="fa fa-wifi fa-4x"></i>
-            <h3>Montagem e Configuração de Redes</h3>
-        </div>
-
-        <div class="clearfix visible-sm"></div>
-        
-        <div class='col-md-4 col-sm-6 text-center containerServices' data-scroll-reveal="enter left move 20px">
-            <i class="fa fa-code fa-4x"></i>
-            <h3>Desenvolvimento de Sites e Sistemas</h3>
-        </div>
-
-
-        <div class="clearfix visible-md"></div>
-        
-        <div class='col-md-4 col-sm-6 text-center containerServices' data-scroll-reveal="enter left move 20px">
-            <i class="fa fa-cloud fa-4x"></i>
-            <h3>Hospedagem de Sites</h3>
-        </div>
-
-        <div class="clearfix visible-sm"></div>
-
-        <div class='col-md-4 col-sm-6 text-center containerServices' data-scroll-reveal="enter left move 20px">
-            <i class="fa fa-facebook-official fa-4x"></i>
-            <h3>Melhore sua presença nas mídias sociais</h3>
-        </div>
-        
-        <div class='col-md-4 col-sm-6 text-center containerServices' data-scroll-reveal="enter left move 20px">
-            <i class="fa fa-google fa-4x"></i>
-            <h3>Você na primeira página</h3>
-        </div>
+        @foreach ($services as $service)
+            <div class='col-md-4 col-sm-6 text-center containerServices' data-scroll-reveal='enter left move 20px'>
+                {!! $service->icon !!}
+                <h3>{{$service->name}}</h3>
+            </div>
+        @endforeach
     </div>
 </div>

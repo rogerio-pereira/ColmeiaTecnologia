@@ -26,11 +26,13 @@ Route::group([
 {
     Route::get('/', 'PainelController@index');
     Route::resource('banners', 'BannerController');
-    Route::resource('categorias_post', 'PostCategoryController');
-    Route::resource('posts', 'PostController');
+    Route::resource('servicos', 'ServiceController');
 
     Route::get('upload', 'UploadController@index');
     Route::post('upload/upload', 'UploadController@upload')->name('upload.upload');
+    
+    Route::resource('categorias_post', 'PostCategoryController');
+    Route::resource('posts', 'PostController');
 });
 
 /*

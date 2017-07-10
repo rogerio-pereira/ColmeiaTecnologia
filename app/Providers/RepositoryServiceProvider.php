@@ -28,10 +28,6 @@ class RepositoryServiceProvider extends ServiceProvider
                 \App\Repositories\UserRepositoryEloquent::class
         );
         $this->app->bind(
-                \App\Repositories\BannerRepository::class, 
-                \App\Repositories\BannerRepositoryEloquent::class
-        );
-        $this->app->bind(
                 \App\Repositories\PostCategoryRepository::class, 
                 \App\Repositories\PostCategoryRepositoryEloquent::class
         );
@@ -42,6 +38,14 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
                 \App\Repositories\SubscriptionRepository::class, 
                 \App\Repositories\SubscriptionRepositoryEloquent::class
+        );
+        $this->app->bind(
+                \App\Repositories\BannerRepository::class, 
+                \App\Repositories\BannerRepositoryEloquent::class
+        );
+        $this->app->bind(
+                \App\Repositories\ServiceRepository::class, 
+                \App\Repositories\ServiceRepositoryEloquent::class
         );
         //:end-bindings:
     }
