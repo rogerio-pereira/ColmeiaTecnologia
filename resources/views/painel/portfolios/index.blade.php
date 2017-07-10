@@ -2,11 +2,11 @@
 
 @section('content')
     <div class='col-md-12 text-center'>
-        <h1>Serviços</h1>
+        <h1>Portifólios</h1>
     </div>
 
     <div class='col-md-12 text-center'>
-        <a href='{{url('/servicos/create')}}' alt='Cadastrar' title='Cadastrar' class='btn btn-default'>
+        <a href='{{url('/portifolios/create')}}' alt='Cadastrar' title='Cadastrar' class='btn btn-default'>
             Cadastrar
         </a>
         <br/>
@@ -19,29 +19,35 @@
                 <th width="100px">Ações</th>
                 <th width="100px">ID</th>
                 <th>Nome</th>
-                <th width="150px">Icone</th>
+                <th>URL</th>
+                <th width="150px">Imagem</th>
+                <th width="100px">Ativo</th>
             </tr>
         </thead>
         <tbody>
-            @forelse ($services as $service)
+            @forelse ($portfolios as $portfolio)
             <tr>
                 <td>
-                    {!! Form::open(['route' => ['servicos.destroy', $service->id], 'method' => 'delete', 'style' => 'display: inline']) !!}
+                    {!! Form::open(['route' => ['portifolios.destroy', $portfolio->id], 'method' => 'delete', 'style' => 'display: inline']) !!}
                     {!! Form::button('<i class="fa fa-trash" aria-hidden="true"></i>', ['type' => 'submit', 'class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}
 
-                    <a href='servicos/{{$service->id}}/edit' class='btn btn-info'>
+                    <a href='portifolios/{{$portfolio->id}}/edit' class='btn btn-info'>
                         <i class="fa fa-pencil" aria-hidden="true"></i>
                     </a>
                 </td>
-                <td>{{$service->id}}</td>
-                <td>{{$service->name}}</td>
-                <td>{!!$service->icon!!}</i></td>
+                <td>{{$portfolio->id}}</td>
+                <td>{{$portfolio->name}}</td>
+                <td>{{$portfolio->url}}</td>
+                <td>
+                    <img src='{{$portfolio->image}}' class='img-responsive'>
+                </td>
+                <td></td>
             </tr>
             @empty
             <tr>
-                <td colspan='4' class='text-center'>
-                    Nenhum Serviço cadastrado
+                <td colspan='6' class='text-center'>
+                    Nenhum Portifólio cadastrado
                 </td>
             </tr>
             @endforelse
@@ -49,6 +55,6 @@
     </table>
 
     <div class='col-md-12 text-center'>
-        {{$services->render()}}
+        {{$portfolios->render()}}
     </div>
 @endsection

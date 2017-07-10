@@ -8,7 +8,7 @@ use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class Service extends Model implements Transformable
+class Portfolio extends Model implements Transformable
 {
     use TransformableTrait;
     use SoftDeletes;
@@ -20,7 +20,7 @@ class Service extends Model implements Transformable
      * @var array
      */
     protected $fillable = [
-        'name', 'icon', 'active'
+        'name', 'url', 'image', 'active'
     ];
     
     /*
@@ -29,7 +29,7 @@ class Service extends Model implements Transformable
      * @var array
      */
     protected static $logAttributes = [
-        'id', 'name', 'icon', 'active'
+        'id', 'name', 'url', 'image', 'active'
     ];
 
     /**

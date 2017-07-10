@@ -51,4 +51,8 @@
             @endforelse
         </tbody>
     </table>
+
+    <div class='col-md-12 text-center'>
+        {{$banners->render()}}
+    </div>
 @endsection

@@ -10,6 +10,11 @@
             <i class="fa fa-wrench" aria-hidden="true"></i> Serviços
         </a>
     </li>
+    <li>
+        <a href='{{url('/portifolios')}}' alt='Portifólios' title='Portifólios'>
+            <i class="fa fa-wrench" aria-hidden="true"></i> Portifólios
+        </a>
+    </li>
 
     {{--Posts--}}
     <li class='menuLabel'>

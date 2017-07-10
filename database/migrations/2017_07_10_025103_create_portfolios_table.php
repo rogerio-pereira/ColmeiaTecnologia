@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServicesTable extends Migration
+class CreatePortfoliosTable extends Migration
 {
 
 	/**
@@ -13,10 +13,11 @@ class CreateServicesTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('services', function(Blueprint $table) {
+		Schema::create('portfolios', function(Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('icon');
+            $table->string('url');
+            $table->string('image');
             $table->boolean('active')->default('1');
             $table->timestamps();
             $table->softDeletes();
@@ -30,7 +31,7 @@ class CreateServicesTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('services');
+		Schema::drop('portfolios');
 	}
 
 }

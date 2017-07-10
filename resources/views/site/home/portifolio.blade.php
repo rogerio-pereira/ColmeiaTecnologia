@@ -5,26 +5,17 @@
     </h1>
 
     <div class='row'>
-        <div class='col-sm-4 col-xs-12 text-center portifolio-item'>
-            <a href='http://www.eph.com.br' target="_blank"  alt='Hotel Estancia' title='Hotel Estancia'>
-                <figure class='portifolio'>
-                    <img src='{{ asset('img/hotel-estancia.jpg') }}' alt='Hotel Estancia' title='Hotel Estancia' class='img-responsive'>
-                    <figcaption>
-                        Hotel Estância
-                    </figcaption>
-                </figure>
-            </a>
-        </div>
-        
-        <div class='col-sm-4 col-xs-12 text-center portifolio-item'>
-            <a href='http://www.soareseornellas.com.br' target="_blank"  alt='Hotel Estancia' title='Hotel Estancia'>
-                <figure class='portifolio'>
-                        <img src='{{ asset('img/soares-e-ornellas.jpg') }}' alt='Soares & Ornellas' title='Soares & Ornellas' class='img-responsive'>
-                    <figcaption>
-                        Soares & Ornellas
-                    </figcaption>
-                </figure>
-            </a>
-        </div>
+        @foreach ($portfolios as $portfolio)
+            <div class='col-sm-4 col-xs-12 text-center portifolio-item'>
+                <a href='{{$portfolio->url}}' target="_blank"  alt='{{$portfolio->name}}' title='{{$portfolio->name}}'>
+                    <figure class='portifolio'>
+                        <img src='{{$portfolio->image}}' alt='{{$portfolio->name}}' title='{{$portfolio->name}}' class='img-responsive'>
+                        <figcaption>
+                            {{$portfolio->name}}
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+        @endforeach
     </div>
 </div>

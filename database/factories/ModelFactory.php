@@ -52,3 +52,11 @@ $factory->define(App\Models\Service::class, function (Faker\Generator $faker) {
         'icon' => '<i class="fa fa-rebel" aria-hidden="true"></i>',
     ];
 });
+
+$factory->define(App\Models\Portfolio::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->sentence($nbWords = 3, $variableNbWords = true),
+        'url' => 'http://www.'.$faker->domainName,
+        'image' => 'https://colmeiatecnologia/img/template/painel/sem-imagem.jpg'
+    ];
+});

@@ -27,6 +27,7 @@ Route::group([
     Route::get('/', 'PainelController@index');
     Route::resource('banners', 'BannerController');
     Route::resource('servicos', 'ServiceController');
+    Route::resource('portifolios', 'PortfolioController');
 
     Route::get('upload', 'UploadController@index');
     Route::post('upload/upload', 'UploadController@upload')->name('upload.upload');
