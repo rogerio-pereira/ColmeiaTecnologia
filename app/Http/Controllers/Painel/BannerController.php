@@ -18,7 +18,6 @@ class BannerController extends Controller
         $this->repository = $repository;
     }
 
-
     /**
      * Display a listing of the resource.
      *
@@ -57,7 +56,7 @@ class BannerController extends Controller
         //Grava Log
         Activity::all()->last();
 
-        Session::flash('message', ['Post salvo com sucesso!']); 
+        Session::flash('message', ['Banner salvo com sucesso!']); 
         Session::flash('alert-type', 'alert-success'); 
 
         return redirect('/');
@@ -94,9 +93,20 @@ class BannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BannerRequest $request, $id)
     {
-        //
+        $data = $request->all();
+        $data['image'] = str_replace("://painel.", '://', $data['image']);
+
+        $this->repository->update($data, $id);
+
+        //Grava Log
+        Activity::all()->last();
+
+        Session::flash('message', ['Banner alterado com sucesso!']); 
+        Session::flash('alert-type', 'alert-success'); 
+
+        return redirect()->route('banners.index');
     }
 
     /**
