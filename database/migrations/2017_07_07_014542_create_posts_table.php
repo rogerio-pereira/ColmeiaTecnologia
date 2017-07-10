@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->text('description');
             $table->text('text');
             $table->string('image');
+            $table->integer('author_id')->unsigned();
             $table->boolean('active')->default('1');
             $table->integer('post_category_id')->unsigned();
             $table->timestamps();
@@ -27,6 +28,10 @@ class CreatePostsTable extends Migration
             $table->foreign('post_category_id')
                 ->references('id')
                 ->on('post_categories');
+
+            $table->foreign('author_id')
+                ->references('id')
+                ->on('users');
 		});
 	}
 

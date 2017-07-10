@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\PostCategory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Prettus\Repository\Contracts\Transformable;
@@ -16,7 +17,7 @@ class Post extends Model implements Transformable
     use LogsActivity;
 
     protected $fillable = [
-        'title', 'description', 'text', 'image', 'active', 'post_category_id'
+        'title', 'description', 'text', 'image', 'author', 'active', 'post_category_id'
     ];
     
     /*
@@ -25,7 +26,7 @@ class Post extends Model implements Transformable
      * @var array
      */
     protected static $logAttributes = [
-        'id', 'title', 'description', 'text', 'image', 'active', 'post_category_id'
+        'id', 'title', 'description', 'text', 'image', 'author', 'active', 'post_category_id'
     ];
 
     /**
@@ -40,4 +41,8 @@ class Post extends Model implements Transformable
         return $this->hasOne(PostCategory::class, 'id', 'post_category_id');
     }
 
+    public function author()
+    {
+        return $this->hasOne(User::class, 'id', 'author_id');
+    }
 }

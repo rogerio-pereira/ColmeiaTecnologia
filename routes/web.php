@@ -42,6 +42,7 @@ Route::group([
             ], function() 
 {
     Route::get('/', 'BlogController@index')->name('blog');
+    Route::get('autor/{name}', 'BlogController@author')->name('author');
     Route::get('{category}', 'BlogController@category')->name('category');
     Route::get('{category}/{title}', 'BlogController@post')->name('post');
     Route::post('busca', 'BlogController@search')->name('busca');

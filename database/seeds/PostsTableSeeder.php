@@ -13,9 +13,9 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(PostCategory::class, 10)->create()->each(function($c){
+        factory(PostCategory::class, 3)->create()->each(function($c){
             for($i=0; $i<10; $i++) {
-                $c->posts()->save(factory(Post::class)->make());
+                $c->posts()->save(factory(Post::class)->make(['author_id' => 1]));
             }
         });
     }

@@ -62,7 +62,6 @@
                                         <li>
                                             <a 
                                                 href='/{{$categoryName}}' 
-                                                alt='{{$categoryName}}' 
                                                 title='{{$categoryName}}'
                                             >
                                                 {{$category->title}}
@@ -79,7 +78,7 @@
 
         <footer class='text-center'>
             &copy; 2017 - 
-            <a href='http://colmeiatecnologia.com.br' alt='Colmeia Tecnolgia' title='Colmeia Tecnolgia'>
+            <a href='http://colmeiatecnologia.com.br' title='Colmeia Tecnolgia'>
                 Colmeia Tecnolgia
             </a>
         </footer>

@@ -12,7 +12,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('img/colmeia-tecnologia.png') }}" alt="{{ config('app.name') }}" title='{{ config('app.name') }}' class='img-responsive'>
+                <img src="{{ asset('img/colmeia-tecnologia.png') }}" title='{{ config('app.name') }}' class='img-responsive'>
             </a>
         </div>
 

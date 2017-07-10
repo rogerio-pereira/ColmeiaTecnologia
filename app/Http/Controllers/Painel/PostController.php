@@ -56,6 +56,7 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         $data = $request->all();
+        $data['author'] = Auth::user()->id;
 
         $this->repository->create($data);
 
