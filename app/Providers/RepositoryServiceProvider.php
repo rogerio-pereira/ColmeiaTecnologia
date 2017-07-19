@@ -51,6 +51,10 @@ class RepositoryServiceProvider extends ServiceProvider
                 \App\Repositories\PortfolioRepository::class, 
                 \App\Repositories\PortfolioRepositoryEloquent::class
         );
+        $this->app->bind(
+                \App\Repositories\SystemUserRepository::class, 
+                \App\Repositories\SystemUserRepositoryEloquent::class
+        );
         //:end-bindings:
     }
 }

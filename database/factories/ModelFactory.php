@@ -60,3 +60,16 @@ $factory->define(App\Models\Portfolio::class, function (Faker\Generator $faker) 
         'image' => 'https://colmeiatecnologia/img/template/painel/sem-imagem.jpg'
     ];
 });
+
+
+//System
+$factory->define(App\Models\SystemUser::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'name' => $faker->name,
+        'email' => $faker->unique()->safeEmail,
+        'password' => $password ?: $password = bcrypt('secret'),
+        'remember_token' => str_random(10),
+    ];
+});
