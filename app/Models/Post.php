@@ -17,7 +17,7 @@ class Post extends Model implements Transformable
     use LogsActivity;
 
     protected $fillable = [
-        'title', 'description', 'text', 'image', 'author', 'active', 'post_category_id'
+        'title', 'description', 'text', 'image', 'author_id', 'active', 'post_category_id'
     ];
     
     /*
@@ -26,7 +26,7 @@ class Post extends Model implements Transformable
      * @var array
      */
     protected static $logAttributes = [
-        'id', 'title', 'description', 'text', 'image', 'author', 'active', 'post_category_id'
+        'id', 'title', 'description', 'text', 'image', 'author_id', 'active', 'post_category_id'
     ];
 
     /**

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Painel\PostRequest;
 use App\Repositories\PostCategoryRepository;
 use App\Repositories\PostRepository;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Spatie\Activitylog\Models\Activity;
 
@@ -56,7 +57,7 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         $data = $request->all();
-        $data['author'] = Auth::user()->id;
+        $data['author_id'] = Auth::user()->id;
 
         $this->repository->create($data);
 
@@ -66,7 +67,7 @@ class PostController extends Controller
         Session::flash('message', ['Post salvo com sucesso!']); 
         Session::flash('alert-type', 'alert-success'); 
 
-        return redirect('/');
+        return redirect('/posts');
     }
 
     /**
