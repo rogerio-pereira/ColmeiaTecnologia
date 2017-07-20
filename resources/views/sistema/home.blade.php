@@ -1,17 +1,29 @@
 @extends('sistema.layouts.layout')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Sistema Dashboard</div>
+    @if(Auth::guard('system')->user()->is_client)
+        @include('sistema.layouts.index-client')
+    @else
+        @include('sistema.layouts.index-technician')
+    @endif
 
-                <div class="panel-body">
-                    You are logged in!
-                </div>
+    {{--<div class='col-md-3'>
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">
+                {{ Auth::guard('system')->user()->name }}
+            </div>
+            <div class="panel-body text-center">
+                <a href="#">
+                    Alterar Senha
+                </a></br>
+                <a href="{{ route('logout') }}">
+                    Logout
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </a>
             </div>
         </div>
-    </div>
-</div>
+    </div>--}}
 @endsection

@@ -1,17 +1,33 @@
 jQuery(function($)
 {
+    $('.date').mask('99/99/9999');
     $(".cnpj").mask("99.999.999/9999-99");
-    $(".cep").mask("99.999-999");
+    $(".zipcode").mask("99.999-999");
     $(".cpf").mask("999.999.999-99");
-    $(".tempo").mask("99:99:99");
-    $('.dinheiro').priceFormat({
+    $(".time").mask("99:99:99");
+    $(".creditCard").mask("9999 9999 9999 9999");
+    $('.money').priceFormat({
         prefix: 'R$ ',
         centsSeparator: ',',
         thousandsSeparator: '.',
     });
+
+    $(".cpf_cnpj").mask("999.999.999-99?999");
+    $(".cpf_cnpj").focusout(function() {
+        var cpfCnpj, element;
+        element = $(this);
+        element.unmask();
+        cpfCnpj = element.val().replace(/\D/g, '');
+
+        if(cpfCnpj.length == 14) {
+            element.mask("99.999.999/9999-99");
+        } else {
+            element.mask("999.999.999-99?999");
+        }
+    }).trigger('focusout');
    
-    $(".telefone").mask("(99) 9999-9999?9");
-    $(".telefone").focusout(function(){
+    $(".phone").mask("(99) 9999-9999?9");
+    $(".phone").focusout(function(){
         var phone, element;
         element = $(this);
         element.unmask();
@@ -23,5 +39,33 @@ jQuery(function($)
         }
     }).trigger('focusout');
 
-    $('.botao').prop("disabled", false);
+    //Busca CEP(focuslost)
+    $("#zipcode").blur(function() {
+        if($(this).val() != '') {
+            //Valor sem . e sem - (##.###-###)
+            var cep = $(this).val().split(".").join("").split("-").join("");
+
+            $.getJSON("//viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+                if (!("erro" in dados)) {
+                    //Atualiza os campos com os valores da consulta.
+                    $("#street").val(dados.logradouro);
+                    $("#neighborhood").val(dados.bairro);
+                    $("#city").val(dados.localidade);
+                    $("#state").val(dados.uf);
+                    $("#number").focus();
+                }
+                else {
+                    //CEP pesquisado não foi encontrado.
+                    alert("CEP não encontrado.");
+                }
+            });
+        }
+    });
+
+    $('.website').blur(function() {
+        website = $(this).val();
+
+        if(website.substring(0, 7) != 'http://')
+            $(this).val('http://'+website);
+    });
 });

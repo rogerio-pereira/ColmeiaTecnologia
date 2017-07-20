@@ -11,7 +11,7 @@
         <title>{{ config('app.name') }}</title>
 
         {{--Styles--}}
-        <link href="{{ asset('css/painel/style.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/sistema/style.min.css') }}" rel="stylesheet">
         @yield('css')
 
         {{--JS Libs--}}
@@ -42,12 +42,22 @@
                         <!-- Right Side Of Navbar -->
                         <ul class="nav navbar-nav navbar-right">
                             @if (Auth::guard('system')->user())
+                                @if(Auth::guard('system')->user()->is_client)
+                                    @include('sistema.layouts.menu-client')
+                                @else
+                                    @include('sistema.layouts.menu-technician')
+                                @endif
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                         {{ Auth::guard('system')->user()->name }} <span class="caret"></span>
                                     </a>
 
                                     <ul class="dropdown-menu" role="menu">
+                                        {{--<li>
+                                            <a href="#">
+                                                Alterar Senha
+                                            </a>
+                                        </li>--}}
                                         <li>
                                             <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -73,25 +83,9 @@
         </header>
 
         <section>
-            @if (!Auth::guest())
-                <div class='col-md-2'>
-                    <aside class='menuContainer'>
-                        <nav class='menuPrincipal'>
-                            @include('painel.layout.menu')
-                        </nav>
-                    </aside>
-                </div>
-                
-                <div class='col-md-10 padding-bottom'>
-                    <div class='row'>
-                        @yield('content')
-                    </div>
-                </div>
-            @else
-                <div class='col-md-12'>
-                    @yield('content')
-                </div>
-            @endif
+            <div class='container'>
+                @yield('content')
+            </div>
         </section>
 
         <div class='clearfix'></div>

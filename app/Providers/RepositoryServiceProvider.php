@@ -55,6 +55,10 @@ class RepositoryServiceProvider extends ServiceProvider
                 \App\Repositories\SystemUserRepository::class, 
                 \App\Repositories\SystemUserRepositoryEloquent::class
         );
+        $this->app->bind(
+                \App\Repositories\SystemClientRepository::class, 
+                \App\Repositories\SystemClientRepositoryEloquent::class
+        );
         //:end-bindings:
     }
 }

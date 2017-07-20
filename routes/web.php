@@ -34,6 +34,7 @@ Route::group([
     Route::group(['middleware' => 'system.auth'], function(){
         Route::get('/', 'HomeController@index');
         Route::get('/home', 'HomeController@index');
+        Route::resource('clients', 'ClientController');
     });
 });
 

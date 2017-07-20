@@ -41,6 +41,7 @@ class User extends Authenticatable implements Transformable
      * @var array
      */
     protected static $logAttributes = [
+        'id',
         'name', 
         'email', 
         'crm'

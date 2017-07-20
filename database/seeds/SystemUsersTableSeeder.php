@@ -16,6 +16,7 @@ class SystemUsersTableSeeder extends Seeder
             'name' => 'Rogério Eduardo Pereira',
             'email' => 'rogerio@colmeiatecnologia.com.br',
             'password' => '$2y$10$sbyaGhD6rG8MY1g4FArA/Oo9fsOMX/M1CN88cLO4HnUkJ3SgGpnue', 
+            'is_client' => false, 
             'remember_token' => str_random(10),
         ]);
     }
