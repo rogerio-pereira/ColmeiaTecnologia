@@ -6,28 +6,8 @@
 
     <div class='row'>
         <div class='col-sm-6 col-sm-push-6'>
-            <div class='row'>
-                {!! Form::open(['route' => 'contato.send',  'class' => 'form']) !!}
-                    {{--Nome--}}
-                    {!! Form::input('text', 'name', null, ['placeholder' => 'Nome', 'class' => 'form-control', 'autofocus', 'required']) !!}
-
-                    {{--Email--}}
-                    {!! Form::input('email', 'email', null, ['placeholder' => 'E-mail', 'class' => 'form-control', 'required']) !!}
-
-                    {{--Assunto--}}
-                    {!! Form::input('text', 'subject', null, ['placeholder' => 'Assunto', 'class' => 'form-control', 'required']) !!}
-
-                    {{--Telefone--}}
-                    {!! Form::input('text', 'telephone', null, ['placeholder' => 'Telefone', 'class' => 'form-control telefone']) !!}
-
-                    {{--Mensagem--}}
-                    {!! Form::textarea('message', null, ['class' => 'form-control', 'placeholder' => 'Mensagem', 'required']) !!}
-
-                    {{--Submit--}}
-                    <div class='text-center margin-bottom'>
-                        {!! Form::submit('Enviar', ['class' => 'btn btn-primary']) !!}
-                    </div>
-                {!! Form::close() !!}
+            <div class='row formMautic'>
+                <script type="text/javascript" src="//marketing.colmeiatecnologia.com.br/form/generate.js?id=2"></script>
             </div>
         </div>
 
